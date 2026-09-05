@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import fs from 'node:fs'
 import express from 'express'
 import cors from 'cors'
 
@@ -487,6 +488,18 @@ app.get('/api/summary/month', authRequired, async (req, res) => {
 })
 
 app.get('/api/healthcheck', (_req, res) => ok(res, { status: 'ok' }))
+
+// Servir frontend compilado (Vite dist) em produção
+const distPath = path.resolve(__dirname, '../dist')
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath))
+  app.get('*', (req, res) => {
+    if (req.path.startsWith('/api')) {
+      return fail(res, 404, 'not_found', 'Rota da API não encontrada.')
+    }
+    res.sendFile(path.join(distPath, 'index.html'))
+  })
+}
 
 app.listen(PORT, () => {
   console.log(`DriverCare API rodando em http://localhost:${PORT}`)

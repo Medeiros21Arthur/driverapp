@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: drivercare
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: node server/index.js
+    plan: free
+    envVars:
+      - key: JWT_SECRET
+        sync: false
+      - key: AZURE_SQL_SERVER
+        sync: false
+      - key: AZURE_SQL_DATABASE
+        sync: false
+      - key: AZURE_SQL_USER
+        sync: false
+      - key: AZURE_SQL_PASSWORD
+        sync: false
+      - key: AZURE_SQL_ENCRYPT
+        value: 'true'
+      - key: AZURE_SQL_TRUST_CERT
+        value: 'false'

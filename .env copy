@@ -1,0 +1,14 @@
+
+# Nomes alternativos suportados
+DB_SERVER=bancodedados.database.windows.net
+DB_DATABASE=usuarios
+DB_USER=sql-server
+DB_PASSWORD=Admin123
+DB_PORT=1433
+
+# Chave secreta para JWT
+JWT_SECRET=super_secret_jwt_key_bancosqlweb_2026
+
+# Porta da API do backend (deve coincidir com o proxy do vite.config.js: 3001)
+PORT=3001
+
