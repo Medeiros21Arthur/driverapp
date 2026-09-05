@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-cream: #f5f5f7;
+
+  --color-brand-50: #fff4eb;
+  --color-brand-100: #ffe6d1;
+  --color-brand-200: #ffcaa3;
+  --color-brand-300: #ffa96b;
+  --color-brand-400: #fd8b36;
+  --color-brand-500: #f5821f;
+  --color-brand-600: #e8720a;
+  --color-brand-700: #c95e08;
+  --color-brand-800: #a04d0d;
+  --color-brand-900: #813e0e;
+
+  --color-choco-400: #a5622a;
+  --color-choco-500: #8b4513;
+  --color-choco-600: #7a3b10;
+  --color-choco-700: #6b3310;
+
+  --color-navy-500: #2a3a5c;
+  --color-navy-600: #22304d;
+  --color-navy-700: #1b2740;
+  --color-navy-800: #151f33;
+  --color-navy-900: #0f1728;
+  --color-navy-950: #0b1120;
+
+  --color-danger-400: #e53935;
+  --color-danger-500: #d32f2f;
+  --color-danger-600: #b71c1c;
+  --color-danger-700: #9c1616;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background: var(--color-navy-950);
+  color: #e5e7eb;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 22px rgba(211, 47, 47, 0);
+  }
+}
+
+@keyframes typingDot {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.anim-fade-up {
+  animation: fadeInUp 0.45s ease both;
+}
+
+.anim-fade {
+  animation: fadeIn 0.3s ease both;
+}
+
+.anim-sos {
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}
+
+.typing-dot {
+  animation: typingDot 1.2s infinite ease-in-out;
+}
