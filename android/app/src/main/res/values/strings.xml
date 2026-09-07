@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DriverCare</string>
+    <string name="title_activity_main">DriverCare</string>
+    <string name="package_name">br.com.dellmar.drivercare</string>
+    <string name="custom_url_scheme">br.com.dellmar.drivercare</string>
+</resources>

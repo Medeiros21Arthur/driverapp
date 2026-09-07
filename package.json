@@ -13,6 +13,9 @@
     "dev:all": "concurrently -k -n api,web -c blue,green \"npm:server\" \"npm:dev\""
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.1",
+    "@capacitor/cli": "^8.5.1",
+    "@capacitor/core": "^8.5.1",
     "@tailwindcss/vite": "^4.3.3",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
